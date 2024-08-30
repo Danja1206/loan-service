@@ -1,6 +1,10 @@
 package ru.team21.loanservice.service.impl;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -30,9 +34,6 @@ public class LoanServiceImpl extends BaseService implements LoanService {
     private final RestTemplate restTemplate;
     private final JwtService jwtService;
     private WebClient.Builder webClientBuilder;
-
-    private static final String USER_SERVICE_URL = "http://localhost:8081/team21/api/v2/user/";
-
 
     @Override
     public Loan saveLoan(Loan loan) {
@@ -124,5 +125,4 @@ public class LoanServiceImpl extends BaseService implements LoanService {
             throw new RuntimeException(e);
         }
     }
-
 }

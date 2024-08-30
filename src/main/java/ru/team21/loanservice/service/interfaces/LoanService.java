@@ -17,5 +17,5 @@ public interface LoanService {
 
     List<Loan> getLoansByUserId();
 
-    String deleteLoanById(Long id);
+    String deleteLoanById(Long id);;
 }

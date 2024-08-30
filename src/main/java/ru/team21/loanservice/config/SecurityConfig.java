@@ -41,6 +41,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> {
                     request.requestMatchers("/team21/api/v2/loan/calculate").permitAll();
+                    request.requestMatchers("/team21/api/v2/loan/test").permitAll();
 
                     request.anyRequest().authenticated();
                 })
